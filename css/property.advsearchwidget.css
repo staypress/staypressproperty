@@ -1,0 +1,90 @@
+/* @override http://dev.site/wp-content/plugins/sp_property/css/property.advsearchwidget.css?ver=1 */
+
+.sp_advsearchwidgetform {
+	position: relative;
+}
+
+.sp_advsearchwidgetform div.availrow {
+	position: relative;
+	margin-top: 5px;
+	overflow: hidden;
+	clear: both;
+}
+
+.sp_advsearchwidgetform .sp_advsearchfor {
+	margin-right: 0;
+	border-color: #d7d7d7;
+	padding: 5px;
+	width: 70%;
+	float: left;
+	color: #777;
+	margin-bottom: 10px;
+}
+
+.sp_advsearchwidgetform .sp_advavail_availfrom {
+	margin-right: 0;
+	border-color: #d7d7d7;
+	padding: 5px;
+	width: 43%;
+	color: #777;
+	margin-top: 10px;
+}
+
+.sp_advsearchwidgetform label {
+	color: #777;
+	margin-right: 0;
+	display: inline-block;
+	width: 60px;
+}
+
+.sp_advsearchwidgetform ul li div.metaname {
+	color: #777;
+	margin-right: 0;
+	display: inline-block;
+	width: 60px;	
+}
+
+.sp_advsearchwidgetform .sp_advavail_availto {
+	margin-right: 0;
+	border-color: #d7d7d7;
+	padding: 5px;
+	width: 43%;
+	color: #777;
+	margin-top: 10px;
+}
+
+.sp_advsearchwidgetform img.ui-datepicker-trigger {
+	position: relative;
+	left: -22px !Important;
+	top: 4px;
+}
+
+.sp_advsearchwidgetform .sp_advsearch {
+	float: right;
+	padding: 5px;
+}
+
+.sp_advsearchwidgetform ul {
+	clear: both;
+	overflow: hidden;
+	margin-left: 0 !Important;	
+}
+
+.sp_advsearchwidgetform ul li div.metagroupname {
+	font-weight: bold;	
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.sp_advsearchwidgetform ul li .metavalue {
+	margin-right: 0;
+	padding: 5px;
+	width: 48%;
+	color: #777;
+	margin-top: 10px;
+	border: 1px solid #d7d7d7;
+}
+
+
+
+

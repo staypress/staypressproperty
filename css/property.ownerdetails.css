@@ -1,0 +1,32 @@
+/* @override 
+	http://dev.site/wp-content/plugins/sp_property/css/property.ownerdetails.css?ver=1
+	http://villamartin.propertyhounds.com/wp-content/plugins/sp_property/css/property.ownerdetails.css?ver=1
+*/
+
+ul.contactdetails {
+	padding: 10px;
+	border: 1px solid #ddd;
+	list-style: none outside none;
+	font-size: 14px;
+}
+
+ul.contactdetails li img.contactgravatar {
+	float: right;
+	border: 1px solid #fff;
+}
+
+ul.contactdetails li {
+	padding: 0;
+	margin: 0 0 2px;
+}
+
+ul.contactdetails li.contactname {
+	font-weight: bold;	
+}
+
+ul.contactdetails li.contactenquirylink {
+	margin-top: 10px;	
+}
+
+
+

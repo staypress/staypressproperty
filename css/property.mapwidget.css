@@ -1,0 +1,10 @@
+/* @override http://dev.site/wp-content/plugins/sp_property/css/property.mapwidget.css?ver=3.0.1 */
+
+/* The main map div */
+div.spmap {
+	display: block;
+	width: 100%;
+	min-height: 250px;
+	background: #99b3cc;
+}
+

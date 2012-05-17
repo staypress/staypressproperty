@@ -1,0 +1,236 @@
+/* @override http://dev.site/wp-content/plugins/sp_property/css/default.shortcode.css?ver=3.2.1 */
+
+div.property {
+	clear: both;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	font: 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	border: 1px solid #ddd;
+	padding: 5px;
+}
+
+div.property div.image {
+	float: left;
+	padding: 5px;
+	border: 1px solid #ddd;
+}
+
+div.property div.image a {
+	display: block;
+	overflow: hidden;
+	margin: 0;	
+}
+
+div.property div.image a img..wp-post-image {
+	margin: 0;
+	padding: 0;	
+}
+
+div.property div.details {
+	float: left;	
+	width: 70%;
+	margin-left: 10px;
+	
+}
+
+div.property div.details h5 {
+	font-weight: bold;
+	color: #000;
+	font-size: 15px;
+}
+
+div.property div.details h5 a {
+	color: #000;
+	font-size: 15px;
+	text-decoration: none;
+}
+
+div.property div.details h5 a:hover {
+	text-decoration: underline;
+}
+
+div.property div.details div.pricingfrom {
+	float: right;	
+}
+
+div.property p.property-meta {
+	overflow: hidden;
+	clear: both;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: 1px solid #ddd;	
+	margin-bottom: 0 !Important;
+}
+
+div.property div.details ul.property-facilities {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+div.property div.details ul.property-facilities li.bedrooms {
+	float: left;
+	display: inline;
+	margin-right: 10px;	
+}
+
+form.sp_advsearchwidgetform input.sp_advsearchfor {
+	font-family:Arial, Helvetica, sans-serif;
+	background:url(images/search_inset.gif) repeat-x top #fff;
+	border:1px solid #e0e0e0;
+	padding:9px 10px 9px 10px;
+	font-size:12px; 
+	color:#999;
+}
+
+form.sp_advshortcodesearchform {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	overflow: hidden;
+	background: #fdfdfd;
+	border: 1px solid #ddd;
+	font: 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+form.sp_advshortcodesearchform input.sp_advshortcodesearchfor {
+    border: 1px solid #D7D7D7;
+    float: left;
+    width: 80%;
+    margin-top: 0;
+	padding: 3px 5px;
+}
+
+form.sp_advshortcodesearchform input.sp_advshortcodesearch {
+    position: relative;
+    display: block;
+    float: right;
+    margin-top: 2;
+    margin-bottom: 0;
+    height: 28px;
+    width: 15%;
+}
+
+form.sp_advshortcodesearchform div.metagroupname {
+    display: block;
+    font-weight: bold;
+}
+
+form.sp_advshortcodesearchform ul {
+    float: left;
+    margin-top: 0;
+    min-width: 50%;
+	list-style-type: none;
+	margin-left: 0;
+	margin-bottom: 5px !Important;
+}
+
+form.sp_advshortcodesearchform ul li div.metaname {
+    color: #777777;
+    display: inline-block;
+    margin-right: 0;
+    width: 85px;
+}
+
+form.sp_advshortcodesearchform div.extrafields ul li.extrarow label {
+	color: #777777;
+    display: inline-block;
+    margin-right: 0;
+    width: 85px;	
+}
+
+form.sp_advshortcodesearchform div.availrow label {
+	color: #777777;
+    display: inline-block;
+    margin-right: 0px;
+    width: 85px;	
+    font: 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+
+
+form.sp_advshortcodesearchform div.extrafields ul li.extrarow .metavalue {
+	border: 1px solid #D7D7D7;
+    color: #777777;
+    margin-right: 0;
+    margin-top: 10px;
+    padding: 5px;
+    width: 43%;	
+}
+
+form.sp_advshortcodesearchform ul li .metavalue {
+    border: 1px solid #D7D7D7;
+    color: #777777;
+    margin-right: 0;
+    margin-top: 10px;
+    padding: 5px;
+    width: 43%;
+}
+
+form.sp_advshortcodesearchform div.sp_shortadv_avail_availfields {
+    float: right;
+    margin-top: 5px;
+    min-width: 50%;
+}
+
+div.availrow {
+	text-align: left;
+}
+
+form.sp_advshortcodesearchform .sp_shortadv_avail_availfrom {
+    border-color: #D7D7D7;
+    color: #777777;
+    margin-right: 0px !Important;
+    padding: 5px;
+    width: 35%;
+    margin-bottom: 10px !Important;
+}
+
+form.sp_advshortcodesearchform .sp_shortadv_avail_availto {
+    border-color: #D7D7D7;
+    color: #777777;
+    margin-right: 0px !Important;
+    padding: 5px;
+    width: 35%;
+    margin-bottom: 10px !Important;
+}
+
+form.sp_advshortcodesearchform img.ui-datepicker-trigger {
+	position: relative;
+	top: 3px !Important;
+	margin-left: -22px !Important;
+}
+
+/* Pagination */
+div.pagination {
+	float: right;
+	margin-bottom: 10px;
+}
+
+div.pagination a.page-numbers {
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	padding: 5px;
+	border: 1px solid #ddd;
+	text-decoration: none;
+	color: #777;
+}
+
+div.pagination a.page-numbers:hover {
+	border: 1px solid #000;
+}
+
+div.pagination span.page-numbers.current {
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	padding: 5px;
+	border: 1px solid #000;
+	text-decoration: none;
+	color: #000;
+}
+
+
+

@@ -1,0 +1,59 @@
+/* @override http://dev.site/wp-content/plugins/sp_property/css/property.quicksearchwidget.css?ver=1 */
+
+.sp_quicksearchwidgetform {
+	position: relative;
+}
+
+.sp_quicksearchwidgetform .sp_quicksearchfor {
+	margin-right: 0;
+	border-color: #d7d7d7;
+	padding: 5px;
+	width: 70%;
+	float: left;
+	color: #777;
+	margin-bottom: 10px;
+}
+
+.sp_quicksearchwidgetform .availfrom {
+	margin-right: 0;
+	border-color: #d7d7d7;
+	padding: 5px;
+	width: 80px !Important;
+	color: #777;
+	margin-top: 10px;
+}
+
+.sp_quicksearchwidgetform label {
+	color: #777;
+	margin-right: 0;
+	display: inline-block;
+	width: 60px;
+}
+
+.sp_quicksearchwidgetform div.availrow {
+	position: relative;
+	margin-top: 5px;
+	overflow: hidden;
+	clear: both;
+}
+
+.sp_quicksearchwidgetform .availto {
+	margin-right: 0;
+	border-color: #d7d7d7;
+	padding: 5px;
+	width: 80px;
+	color: #777;
+	margin-top: 10px;
+}
+
+.sp_quicksearchwidgetform img.ui-datepicker-trigger {
+	position: relative;
+	left: -22px !Important;
+	top: 4px;
+}
+
+.sp_quicksearchwidgetform .sp_quicksearch {
+	float: right;
+	padding: 5px;
+}
+

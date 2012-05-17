@@ -1,0 +1,52 @@
+/* @override http://dev.site/wp-content/plugins/sp_property/css/property.nearbywidget.css?ver=1 */
+
+ul.propertythumbnaillist li.propertythumbnail {
+	position: relative;
+	width: 100%;
+	max-height: 250px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+ul.propertythumbnaillist li.propertythumbnail a div.theexcerpt {
+	position: absolute;
+	min-width: 250px;
+	max-height: 230px;
+	background: transparent url(../images/opaque80.png) repeat;
+	padding: 10px;
+	color: #ccc;
+	display: none;
+}
+
+ul.propertythumbnaillist li.propertythumbnail a:hover div.theexcerpt {
+	display: block;
+}
+
+ul.propertythumbnaillist li.propertythumbnail a img.attachment-post-thumbnail.wp-post-image {
+	width: 100%;
+}
+
+ul.propertythumbnaillist li.propertythumbnail div.nearcount {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	max-width: 25%;
+	font-size: 34px;
+	color: white;
+	font-weight: bold;
+}
+
+ul.propertythumbnaillist li.propertythumbnail a {
+	text-decoration: none;
+}
+
+ul.propertythumbnaillist li.propertythumbnail a h4 {
+	position: absolute;
+	bottom: 3px;
+	width: 100%;
+	left: 0;
+	margin: 0;
+	padding: 10px;
+	background: transparent url(../images/opaque80.png) repeat;
+	color: #ddd;
+}

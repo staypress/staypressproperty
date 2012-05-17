@@ -1,0 +1,78 @@
+/* @override http://dev.site/wp-content/plugins/sp_property/addons/googlemaps_location/css/mapadministration.css?ver=1 */
+
+/* @group Location */
+
+#locationmap {
+	float: left;
+	background: #99b3cc;
+	width: 335px;
+	height: 300px;
+	border: 1px solid #99b3cc;
+}
+
+#locationdetails {
+	float: left;
+	background: #ffffff;
+	width: 200px;
+	min-height: 300px;
+	margin-left: 15px;
+	border: 1px solid #fff;
+}
+
+#locationdetails h4 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	height: 25px;
+	border-bottom: 1px solid #fff;
+	display: block;
+}
+
+#locationdetails h4 span {
+	float: left;
+	padding-top: 5px;
+	padding-left: 10px;
+	font: bold 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#locationdetails h4 a {
+	float: right;
+	padding-right: 0px;
+	padding-top: 8px;
+	color: #333;
+	font: 11px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#innerlocationdetails, #innerlocationmessage {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+}
+
+p.location {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+.locationinput {
+	display: none;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+label.locationsup {
+	display: none !Important;
+}
+
+#mapquickfind {
+	width: 500px;
+	margin-bottom: 10px;
+	float: left;
+}
+
+#mapquickfindbutton {
+	margin-top: 0px !Important;
+	float: left;
+	margin-left: 10px;
+}
+
+/* @end */

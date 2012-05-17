@@ -1,0 +1,667 @@
+
+div.propertylistitem {
+	margin-bottom: 10px;
+	padding: 5px 5px 15px 0;
+	clear: both;
+	border-bottom: 1px dotted #ddd;
+	position: relative;
+}
+
+#editaddpropertyform div.subheaderbar {
+	position: relative;
+	margin-left: -5px;
+}
+
+div.propertyshortdetails {
+	float: left;
+	padding: 0;
+	width: 75%;
+}
+
+div.thumbnailimage {
+	float: left;
+	margin-right: 10px;
+	padding: 3px;
+	border: 1px solid #ccc;
+}
+
+img.thumbnail {
+	width: 140px;
+}
+
+div.clear {
+	clear: both;
+}
+
+div.propertyshortdesc {
+	float: left;
+	width: 100%;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+a.propertyreference {
+	color: #000;
+	margin-right: 10px;
+	font: bold 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+div.propertylinks {
+	color: #666;
+	font: 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+div.propertystatus {
+	position: absolute;
+	top: 10px;
+	left: -15px;
+	width: 130px;
+	background-color: #ffffff;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	-webkit-box-shadow: 2px 2px 5px #666;
+	-moz-box-shadow: 2px 2px 5px #666;
+}
+
+#propertysearch {
+	margin-top: 10px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+select#addtagselect {
+	width: 85%;
+	margin-right: 10px;
+}
+
+ul.selectedtaglist {
+	margin-top: 15px;
+}
+
+ul.selectedtaglist li.selectedtag {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin-bottom: 0px;
+	background-color: #dedede;
+	padding-left: 5px;
+
+}
+
+input#filterontags {
+	float: left;
+	display: none;
+}
+
+ul.selectedtaglist li.selectedtag.newtag {
+	background-color: #fdff90;
+}
+
+ul.selectedtaglist li.selectedtag a.selectedtagremove {
+	width: 16px;
+	height: 16px;
+	padding-left: 16px;
+	background: url(../images/tag_blue.png) no-repeat;
+	text-decoration: none;
+	margin-left: 0px;
+}
+
+ul.selectedtaglist li.selectedtag a.selectedtagremove:hover {
+	background: url(../images/delete.png) no-repeat;
+}
+
+#addtaglink img {
+	vertical-align: text-top;
+}
+
+div.propertystatus.live {
+	background-color: #85ccff;
+	color: #000;
+}
+
+div.propertystatus.draft {
+	background-color: #fdff55;
+	color: #000;
+}
+
+div.propertystatus.deleted {
+	background-color: #ff5b60;
+	color: #000;
+}
+
+a.propertytitle, a.propertytitle:visited {
+	color: #555;
+	font: bold 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+div.propertylinks {
+	float: right;
+}
+
+a.propertyeditlink {
+	color: #666;
+	font: 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+a.propertydeletelink img {
+	vertical-align: bottom;
+}
+
+
+a.propertytitle:hover {
+	text-decoration: underline;
+}
+
+div#editor-toolbar {
+	height: 30px;
+}
+
+div#editor-toolbar #edButtonHTML, div#editor-toolbar #edButtonPreview {
+	background-color: #F1F1F1;
+	border-color: #DFDFDF;
+	color: #999999;
+}
+
+div#editor-toolbar #edButtonHTML.active, div#editor-toolbar #edButtonPreview.active {
+	background-color: #E9E9E9;
+	border-color: #E9E9E9;
+	color: #333333;
+}
+
+form#editaddpropertyform {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+form#editaddpropertyform label.main {
+	display: block;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+textarea#propertydescription {
+	width: 100%;
+}
+
+form#editaddpropertyform input.main, form#editaddpropertyform textarea.main {
+	display: block;
+}
+
+input.narrow, select.narrow {
+	width: 50%;
+	margin-bottom: 10px;
+}
+
+input.wide, textarea.wide {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+textarea.short {
+	min-height: 120px;
+}
+
+#media-buttons {
+	padding-left: 0;
+}
+
+/* @group Edit/add side bar */
+
+#propertystatusform div.statuslabel {
+	margin-left: 5px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	clear: both;
+}
+
+#propertystatusform div.statuslabel span.status {
+	margin-left: 5px;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#propertystatusform div.statuslabel span.status:hover {
+	background: #FFF;
+}
+
+#propertystatusform div.statuslabel a.status {
+	color: #000;
+	margin-left: 5px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+div.highlightbox.blue {
+	width: 100%;
+	min-height: 100px;
+	background-color: #f1f5fa;
+	border: 1px solid #c0d1ec;
+}
+
+div.highlightbox p {
+	margin: 10px;
+}
+
+div.highlightbox.yellow {
+	width: 100%;
+	min-height: 100px;
+	background-color: #ffc;
+	border: 1px solid #fc6;
+	padding-top: 5px;
+}
+
+div.rightwrap div.highlightbox strong {
+
+}
+
+form#propertystatusform {
+	padding-top: 0px;
+	margin-bottom: 10px;
+}
+
+
+/* @end */
+
+
+
+
+/* @group Images */
+
+ul.editimagelist {
+	width: 100%;
+}
+
+ul.editimagelist li.editimageitem {
+	float: left;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	background: #FFF;
+	margin: 5px;
+	border: 2px solid #FFFFFF;
+}
+
+ul.editimagelist li.editimageitemhighlight {
+	float: left;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	background: #EEEEEE;
+	margin: 5px;
+	border: 2px solid #EEEEEE;
+}
+
+ul.editimagelist li.editimageitem img.editimage {
+	cursor: move;
+	height: 100px;
+	width: 100px;
+}
+
+ul.keyimageholders {
+	width: 100%;
+}
+
+ul.keyimageholders li.imageholder {
+	position: relative;
+	float: left;
+	width: 100px;
+	height: 120px;
+	overflow: hidden;
+	background: #FFF url(../images/stripe.png) repeat center center;
+	margin: 5px;
+	border: 2px solid #666;
+	text-align: center;
+	opacity: 1;
+}
+
+ul.keyimageholders li.imageholder img {
+	width: 100px;
+	height: 100px;
+	z-index: 0;
+	position: relative;
+}
+
+ul.keyimageholders li.imageholder div {
+	position: absolute;
+	bottom: 3px;
+	left: 15px;
+	text-shadow: #000 2px 2px 5px;
+	color: #FFF;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#uploadimagefile {
+	text-align: right;
+	-moz-opacity: 0;
+	filter: alpha(opacity: 0);
+	opacity: 0;
+	position: relative;
+	margin-top: 5px;
+	z-index: 2;
+	cursor: pointer;
+}
+
+#uploadimage {
+	position: absolute;
+	bottom: 5px;
+	right: 10px;
+	width: 94px;
+	height: 24px;
+}
+
+div.imageuploadholder {
+	position: relative;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 0px;
+}
+
+#imageblock div.imageprocessors {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+#imageblock {
+	margin-top: 10px;
+}
+
+ul.keyimageholders li.imageholder.activedrop div {
+	text-shadow: #666 1px 1px 5px;
+	color: #fefc34;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+ul.keyimageholders li.imageholder.activedrop img {
+	opacity: 0.75;
+}
+
+
+/* @end */
+
+
+/* @group Prices */
+
+ul.pricetable {
+	list-style-position: outside;
+	list-style-image: none;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+	margin-bottom: 15px;
+}
+ul.pricetable li {
+	padding: 2px;
+	margin-bottom: 2px;
+}
+
+ul.pricetable li.headingrow {
+	height: 20px;
+}
+
+ul.pricetable li.alt {
+	background-color: #feffc8;
+}
+
+ul.pricetable li ul.pricecolumns {
+	list-style-position: outside;
+	list-style-image: none;
+	list-style-type: none;
+	clear: both;
+	margin-right: 0;
+	margin-top: 0;
+	margin-left: 0;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+	height: 30px;
+}
+
+ul.pricetable li ul.pricecolumns li.pricecolumn {
+	float: left;
+	display: inline;
+	padding: 2px;
+	margin: 0 5px 0 0;
+	min-width: 65px;
+}
+
+ul.pricetable li ul.pricecolumns li.pricecolumn.heading {
+	text-align: left;
+}
+
+ul.pricetable li ul.pricecolumns li.pricebandcolumn {
+	float: left;
+	display: inline;
+	padding: 2px;
+	margin: 0 5px 0 0;
+	width: 120px;
+}
+
+ul.pricetable li ul.pricecolumns li input {
+	width: 3.5em;
+}
+
+li.pricecolumn.col1, li.pricecolumn.col3, li.pricecolumn.col5 {
+	background: #EEE;
+}
+
+li.headingcolumn.heading {
+	float: left;
+	display: inline;
+	padding: 2px;
+	margin: 0 5px 0 0;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 1px solid #eee;
+}
+
+li.headingcolumn.heading.covers-1 {
+	min-width: 70px;
+}
+
+li.headingcolumn.heading.covers-2 {
+	min-width: 140px;
+}
+
+li.headingcolumn.heading.covers-3 {
+	min-width: 210px;
+}
+
+li.headingcolumn.heading.covers-1 {
+	min-width: 280px;
+}
+
+li.headingcolumn.heading.covers-1 {
+	min-width: 350px;
+}
+
+li.headingcolumn.heading.covers-1 {
+	min-width: 420px;
+}
+
+
+ul.pricetable li ul.pricecolumns li a.cascaderatesbutton {
+	width: 16px;
+	height: 16px;
+	background: transparent url(../images/arrow_down.gif) no-repeat;
+	padding-right: 5px;
+	padding-left: 8px;
+	border: 0;
+	text-decoration: none;
+	vertical-align: 0px;
+}
+
+select.priceband {
+	min-width: 110px;
+}
+
+select.priceday {
+	width: 45px;
+	margin-right: 5px;
+}
+
+select.pricemonth {
+	width: 55px;
+}
+
+ul.pricetable li ul.pricecolumns li a.removepricerow {
+	width: 16px;
+	height: 16px;
+	background: transparent url(../images/delete.png) no-repeat 0 4px;
+	padding-right: 8px;
+	padding-left: 8px;
+	padding-bottom: 4px;
+	border: 0;
+	text-decoration: none;
+	vertical-align: 0px;
+}
+ul.pricetable li ul.pricecolumns li a.addpricerow {
+	width: 16px;
+	height: 16px;
+	background: transparent url(../images/add.png) no-repeat 0 4px;
+	padding-right: 8px;
+	padding-left: 8px;
+	padding-bottom: 4px;
+	border: 0;
+	text-decoration: none;
+	vertical-align: 0px;
+}
+/* @end */
+
+/* @group Location */
+
+#locationmap {
+	float: left;
+	background: #99b3cc;
+	width: 400px;
+	height: 300px;
+	border: 1px solid #99b3cc;
+}
+
+#locationdetails {
+	float: left;
+	background: #ffffff;
+	width: 220px;
+	min-height: 300px;
+	margin-left: 15px;
+	border: 1px solid #fff;
+}
+
+#locationdetails h4 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	height: 25px;
+	border-bottom: 1px solid #fff;
+	display: block;
+}
+
+#locationdetails h4 span {
+	float: left;
+	padding-top: 5px;
+	padding-left: 10px;
+	font: bold 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#locationdetails h4 a {
+	float: right;
+	padding-right: 0px;
+	padding-top: 8px;
+	color: #333;
+	font: 11px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#innerlocationdetails, #innerlocationmessage {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+}
+
+p.location {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+.locationinput {
+	display: none;
+	margin-bottom: 5px;
+}
+
+label.locationsup {
+	display: none !Important;
+}
+
+/* @end */
+
+
+
+label#includedeletedlabel {
+	padding-left: 5px;
+}
+
+input#includedeleted {
+	margin-left: 5px;
+}
+
+#filterform div.metaname {
+	float: left;
+	min-width: 95px;
+	padding-top: 4px;
+	text-align: left;
+	margin-right: 5px;
+}
+
+.metatextvalue, .metaselectvalue {
+	width: 6em;
+	vertical-align: top;
+}
+
+#uploadstatusmessage {
+	position: absolute;
+	width: 350px;
+	height: 75px;
+	left: 50%;
+	top: 50%;
+	background-color: transparent;
+	margin-left: -175px;
+	margin-right: 0px;
+	display: none;
+	-moz-border-radius: 20px;
+	-khtml-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	background-image: url(../images/opaque.png);
+}
+
+#uploadstatusmessage p {
+	padding: 25px;
+	margin: 0;
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: bold;
+	text-shadow: #000 1px 1px 2px;
+	text-align: center;
+}
+
+li.pricerow.altstripe {
+	background-color: #f2ffff;
+}
+
+#filterform div.metagroupname {
+	min-width: 95px;
+	padding-top: 4px;
+	text-align: left;
+	margin-right: 5px;
+	font-weight: bold;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #BBB;
+}

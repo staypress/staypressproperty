@@ -1,0 +1,85 @@
+/* @override http://dev.site/wp-content/plugins/sp_property/css/property.tagwidget.css?ver=1 */
+
+ul.widget_termgroup {
+	margin-bottom: 10px !Important;
+	overflow: hidden;
+}
+
+ul.widget_termgroup li {
+	
+}
+
+li.widget_termgrouplabel {
+	font-weight: bold;
+	color: #666;
+	font-size: 14px;
+	clear: both;
+}
+
+ul.widget_termgroup li.widget_termitems ul {
+	margin-bottom: 0 !Important;
+	overflow: hidden;
+	clear: both;
+	list-style-position: inside;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+li.widget_termitem {
+	clear: both;
+	overflow: hidden;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+li.widget_termitem div {
+	line-height: 25px;
+	margin-bottom: 2px;
+	margin-top: 0px;
+	float: left;
+	background: #efefef;
+	padding-left: 5px;
+	padding-right: 0;
+	height: 20px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	overflow: hidden;
+}
+
+li.widget_termitem div.end {
+	line-height: 25px;
+	margin-bottom: 2px;
+	float: left;
+	background: transparent url(../images/efefef.righttabarrow.png) no-repeat right center;
+	padding: 0;
+	min-width: 13px;
+	height: 25px;
+}
+
+li.widget_termitem.selected div {
+	background-color: #f0f0fe;
+}
+
+li.widget_termitem.selected div.end {
+	background: transparent url(../images/f0f0fe.righttabarrow.png) no-repeat right center;
+}
+
+li.widget_termitem.currentlist div {
+	background-color: #fef8be;
+	
+}
+li.widget_termitem.currentlist div.end {
+	background: transparent url(../images/fef8be.righttabarrow.png) no-repeat right center;
+}
+
+li.widget_termitem a {
+	text-decoration: none;
+	padding-top: 5px;
+}
+
+li.widget_termitem a span.plus, li.widget_termitem a span.minus {
+	float: right;
+	color: #7a7a7a;
+	font-weight: bold;
+	margin-left: 70px;
+}
