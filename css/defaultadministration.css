@@ -1,4 +1,4 @@
-/* @override http://dev.site/wp-content/plugins/sp_property/css/defaultadministration.css?ver=1 */
+/* @override http://solelyrentals.com/wp-content/plugins/sp_property/css/defaultadministration.css?ver=1 */
 
 div#propertylist, div.wrapcontents {
 	float: left;
@@ -56,7 +56,7 @@ div.innerwrap h2 {
 	border-top-right-radius: 6px;
 	background: #DFDFDF url(../images/gray-grad.png) repeat-x scroll left top;
 	padding: 6px 10px 6px 5px;
-	line-height: 15px;
+	line-height: 5px;
 }
 
 #pagination {
@@ -65,6 +65,8 @@ div.innerwrap h2 {
 	text-decoration: none;
 	color: #424242;
 	margin-top: 1px;
+	width: 50%;
+	text-align: right;
 }
 
 #pagination .page-numbers {
@@ -153,7 +155,7 @@ div.innerwrap h2 a.selected {
 	height: 23px;
 	margin-bottom: 0;
 	padding: 2px 5px 5px;
-	margin-top: 0;
+	margin-top: 0px;
 }
 
 #innermenu li {
@@ -223,16 +225,6 @@ div.propertylistitem {
 	overflow: hidden;
 }
 
-div.childpropertylistitem {
-	margin-top: 5px;
-	margin-bottom: 5px;
-	padding: 5px 5px 0 50px;
-	clear: both;
-	border-bottom: 1px dotted #ddd;
-	position: relative;
-	overflow: hidden;
-}
-
 #editaddpropertyforminner div.subheaderbar {
 	position: relative;
 	margin-left: -5px;
@@ -243,17 +235,6 @@ div.propertyshortdetails {
 	padding: 0 0 10px;
 	width: 405px;
 	min-height: 90px;
-}
-
-div.childpropertylistitem div.propertyshortdetails {
-	float: left;
-	padding: 0 0 10px;
-	width: 360px;
-	min-height: 90px;
-}
-
-#post_parent {
-	max-width: 230px;	
 }
 
 div.thumbnailimage {
@@ -373,7 +354,7 @@ div#editor-toolbar #edButtonHTML.active, div#editor-toolbar #edButtonPreview.act
 }
 
 textarea#propertydescription {
-	width: 99.9%;
+	width: 100%;
 }
 
 #editaddpropertyforminner input.main, #editaddpropertyforminner textarea.main {
@@ -542,12 +523,6 @@ div.propertystatus {
 	-webkit-box-shadow: 0px 2px 5px #666;
 	-moz-box-shadow: 0px 2px 5px #666;
 	opacity: 0.75;
-}
-
-div.childpropertylistitem div.propertystatus {
-	position: absolute;
-	top: 6px;
-	left: 51px;
 }
 
 #propertysearch {
