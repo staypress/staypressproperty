@@ -447,8 +447,8 @@ class property_model {
 		}
 
 		$args = array(
-			'posts_per_page' => $show,
-			'offset' => $startat,
+			'posts_per_page' => 25,
+			'offset' => 0,
 			'orderby' => 'post_modified',
 			'order' => 'DESC',
 			'post_type' => STAYPRESS_PROPERTY_POST_TYPE,
@@ -1294,7 +1294,7 @@ class property_model {
 			wp_cache_delete($child_id, 'post_meta');
 		}
 
-		return $this->db->query( $sql );
+		return true;
 	}
 
 	function arrange_imageorder($property_id, $imgarray = false) {
@@ -1380,9 +1380,9 @@ class property_model {
 			'post_category' => array(get_option('default_category')),
 			'post_type' => STAYPRESS_PROPERTY_POST_TYPE,
 			'comment_status' => 'closed',
-			'tags_input'	=> $property['tags_imput'],
+			'tags_input'	=> (isset($property['tags_input']) ? $property['tags_input'] : ''),
 			'tax_input' => $property['tax_input'],
-			'post_parent' => $property['post_parent']
+			'post_parent' => (isset($property['post_parent']) ? $property['post_parent'] : 0)
 			);
 
 			// update the post
@@ -1451,9 +1451,9 @@ class property_model {
 			'post_category' => array(get_option('default_category')),
 			'post_type' => STAYPRESS_PROPERTY_POST_TYPE,
 			'comment_status' => 'closed',
-			'tags_input'	=> $property['tags_imput'],
+			'tags_input'	=> (isset($property['tags_input']) ? $property['tags_input'] : ''),
 			'tax_input' => $property['tax_input'],
-			'post_parent' => $property['post_parent']
+			'post_parent' => (isset($property['post_parent']) ? $property['post_parent'] : 0)
 			);
 
 			// update the post
