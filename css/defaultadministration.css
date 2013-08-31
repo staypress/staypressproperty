@@ -399,7 +399,8 @@ textarea.short {
 }
 
 #editaddpropertyform input.button {
-	margin-top: 10px;
+	margin-top: 0;
+	float: right;
 }
 
 #editaddpropertyform a.cancellink {
@@ -473,6 +474,7 @@ div.taghint {
 p.howto {
 	font-size: 11px;
 	margin: 0 0 6px 8px;
+	clear: both;
 }
 
 div.handlediv {
