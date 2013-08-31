@@ -34,11 +34,11 @@ class sp_propertyadmin {
 		if($installed_build === false) {
 			$installed_build = $this->build;
 			// Create the property class and force table creation
-			$this->property =& new property_model($wpdb, false);
+			$this->property = new property_model($wpdb, false);
 			SPPCommon::update_option('staypress_property_build', $installed_build);
 		} else {
 			// Create the property class and send through installed build version
-			$this->property =& new property_model($wpdb, $installed_build);
+			$this->property = new property_model($wpdb, $installed_build);
 		}
 
 		$tz = get_option('gmt_offset');
@@ -1025,7 +1025,8 @@ class sp_propertyadmin {
 		// Add the menu page
 		add_menu_page(__('Property Management','property'), __('Properties','property'), 'edit_property',  'property', array(&$this,'show_property_panel'), SPPCommon::property_url('images/home.png'));
 		// Move things about
-		$menuaddedat = end(array_keys($menu));
+		$keys = array_keys($menu);
+		$menuaddedat = end($keys);
 
 		$checkfrom = $_wp_last_object_menu + 1;
 		while(isset($menu[$checkfrom])) {
@@ -3127,7 +3128,7 @@ class sp_propertyadmin {
 
 			echo "<div class='highlightbox blue'>";
 			echo "<p>";
-			echo __('We don\'t take donations here at <strong>StayPress</strong>. Instead, we pick a charity every month and ask you to donate directly to them if you feel the urge to give.','property');
+			echo __('We don\'t take donations. Instead, we pick a charity every month and ask you to donate directly to them if you feel the urge to give.','property');
 			echo "</p>";
 			echo "</div>";
 
@@ -3297,11 +3298,11 @@ class sp_propertyadmin {
 			$action = 'bulk-delete';
 		}
 
-		if(('Add Group' == $_GET['doaction'] || 'Add Group' == $_GET['doaction2']) && $action != 'addedfacgroup') {
+		if( ( ( isset($_GET['doaction']) && 'Add Group' == $_GET['doaction']) || ( isset($_GET['doaction2']) && 'Add Group' == $_GET['doaction2'])) && $action != 'addedfacgroup') {
 			$action = 'addgroup';
 		}
 
-		if(('Add Facility' == $_GET['doaction'] || 'Add Facility' == $_GET['doaction2']) && $action != 'addedfac') {
+		if( ( ( isset($_GET['doaction']) && 'Add Facility' == $_GET['doaction']) || (isset($_GET['doaction2']) && 'Add Facility' == $_GET['doaction2'])) && $action != 'addedfac') {
 			$action = 'add';
 		}
 
@@ -3505,11 +3506,11 @@ class sp_propertyadmin {
 		}
 
 		echo '<form class="search-form" action="" method="get">';
-		echo '<input type="hidden" name="taxonomy" value="' . esc_attr($taxonomy) .'" />';
+		echo '<input type="hidden" name="taxonomy" value="' . (isset($taxonomy) ? esc_attr($taxonomy) : '') .'" />';
 		echo '<input type="hidden" name="page" value="' . esc_attr($page) .'" />';
 		echo '<p class="search-box">';
 			echo '<label class="screen-reader-text" for="tag-search-input">' . __( 'Search Tags' ) . ':</label>';
-			echo '<input type="text" id="tag-search-input" name="s" value="' . esc_attr( stripslashes( $_GET['s'] ) ) . '" />';
+			echo '<input type="text" id="tag-search-input" name="s" value="' . esc_attr( stripslashes( (isset($_GET['s']) ? $_GET['s'] : '') ) ) . '" />';
 			echo '<input type="submit" value="' . esc_attr( 'Search Facilities' ) . '" class="button" />';
 		echo '</p>';
 		echo '</form>';
@@ -3589,13 +3590,13 @@ class sp_propertyadmin {
 			$class .= '"';
 			$style = '';
 
-			if ( isset($styles[$type]) && isset($styles[$type][$column_key]) ) {
+			if ( isset($type) && isset($styles[$type]) && isset($styles[$type][$column_key]) ) {
 				$style .= ' ' . $styles[$type][$column_key];
 			}
 			$style = ' style="' . $style . '"';
 
 			echo '<th scope="col"';
-			echo $id ? "id=\"$column_key\"" : ""; echo $class; echo $style;
+			echo isset($id) ? "id=\"$column_key\"" : ""; echo $class; echo $style;
 			echo '>' . $column_display_name . '</th>';
 		}
 		echo '</tr>';
@@ -3615,13 +3616,13 @@ class sp_propertyadmin {
 			$class .= '"';
 			$style = '';
 
-			if ( isset($styles[$type]) && isset($styles[$type][$column_key]) ) {
+			if ( isset($type) && isset($styles[$type]) && isset($styles[$type][$column_key]) ) {
 				$style .= ' ' . $styles[$type][$column_key];
 			}
 			$style = ' style="' . $style . '"';
 
 			echo '<th scope="col"';
-			echo $id ? "id=\"$column_key\"" : ""; echo $class; echo $style;
+			echo isset($id) ? "id=\"$column_key\"" : ""; echo $class; echo $style;
 			echo '>' . $column_display_name . '</th>';
 		}
 		echo '</tr>';
@@ -3836,19 +3837,19 @@ class sp_propertyadmin {
 		echo '<select name="metatype" id_"metatype">';
 
 		echo '<option value="1"';
-		if($fac->metatype == 1) echo " selected='selected'";
+		if(isset($fac->metatype) && $fac->metatype == 1) echo " selected='selected'";
 		echo '>' . __('Numeric','property') . '</option>';
 
 		echo '<option value="2"';
-		if($fac->metatype == 2) echo " selected='selected'";
+		if(isset($fac->metatype) && $fac->metatype == 2) echo " selected='selected'";
 		echo '>' . __('Text','property') . '</option>';
 
 		echo '<option value="3"';
-		if($fac->metatype == 3) echo " selected='selected'";
+		if(isset($fac->metatype) && $fac->metatype == 3) echo " selected='selected'";
 		echo '>' . __('Yes / No','property') . '</option>';
 
 		echo '<option value="4"';
-		if($fac->metatype == 4) echo " selected='selected'";
+		if(isset($fac->metatype) && $fac->metatype == 4) echo " selected='selected'";
 		echo '>' . __('Option','property') . '</option>';
 
 		echo '</select>';
@@ -3887,7 +3888,7 @@ class sp_propertyadmin {
 		echo '<th scope="row" valign="top"><label for="metaoptions">' . __('Facility options', 'property') . '</label></th>';
 		echo '<td>';
 		echo '<textarea name="metaoptions" id="metaoptions">';
-		echo esc_html($fac->metaoptions);
+		echo (isset($fac->metaoptions) ? esc_html($fac->metaoptions) : '');
 		echo '</textarea>';
 		echo '<p class="description">' . __('If the type, above, is option, then enter the available options here - 1 per line.') . '</p></td>';
 		echo '</tr>';
@@ -4009,7 +4010,7 @@ class sp_propertyadmin {
 		$messages[5] = __('Tag not updated.');
 		$messages[6] = __('Tags deleted.');
 
-		if(is_taxonomy($taxonomy)) {
+		if(taxonomy_exists($taxonomy)) {
 			$tax = get_taxonomy($taxonomy);
 			$title = __('Edit','property') . " " . $tax->label;
 		}
@@ -4048,7 +4049,7 @@ class sp_propertyadmin {
 		echo '<input type="hidden" name="page" value="' . esc_attr($page) .'" />';
 		echo '<p class="search-box">';
 			echo '<label class="screen-reader-text" for="tag-search-input">' . __( 'Search Tags' ) . ':</label>';
-			echo '<input type="text" id="tag-search-input" name="s" value="' . esc_attr( stripslashes( $_GET['s'] ) ) . '" />';
+			echo '<input type="text" id="tag-search-input" name="s" value="' . esc_attr( stripslashes( (isset($_GET['s']) ? $_GET['s'] : '') ) ) . '" />';
 			echo '<input type="submit" value="' . esc_attr( 'Search Tags' ) . '" class="button" />';
 		echo '</p>';
 		echo '</form>';
@@ -4122,13 +4123,13 @@ class sp_propertyadmin {
 			$class .= '"';
 			$style = '';
 
-			if ( isset($styles[$type]) && isset($styles[$type][$column_key]) ) {
+			if ( isset($type) && isset($styles[$type]) && isset($styles[$type][$column_key]) ) {
 				$style .= ' ' . $styles[$type][$column_key];
 			}
 			$style = ' style="' . $style . '"';
 
 			echo '<th scope="col"';
-			echo $id ? "id=\"$column_key\"" : ""; echo $class; echo $style;
+			echo isset($id) ? "id=\"$column_key\"" : ""; echo $class; echo $style;
 			echo '>' . $column_display_name . '</th>';
 		}
 		echo '</tr>';
@@ -4148,13 +4149,13 @@ class sp_propertyadmin {
 			$class .= '"';
 			$style = '';
 
-			if ( isset($styles[$type]) && isset($styles[$type][$column_key]) ) {
+			if ( isset($type) && isset($styles[$type]) && isset($styles[$type][$column_key]) ) {
 				$style .= ' ' . $styles[$type][$column_key];
 			}
 			$style = ' style="' . $style . '"';
 
 			echo '<th scope="col"';
-			echo $id ? "id=\"$column_key\"" : ""; echo $class; echo $style;
+			echo isset($id) ? "id=\"$column_key\"" : ""; echo $class; echo $style;
 			echo '>' . $column_display_name . '</th>';
 		}
 		echo '</tr>';

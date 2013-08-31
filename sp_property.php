@@ -4,7 +4,7 @@ Plugin Name: StayPress Property Mangement plugin
 Plugin URI: http://staypress.com/
 Description: The StayPress property management plugin
 Author: StayPress team
-Version: 1.3
+Version: 1.4
 Author URI: http://staypress.org/
 
 Copyright 2012  (email: support@staypress.com)
