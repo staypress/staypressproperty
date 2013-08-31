@@ -176,7 +176,7 @@ class property_model {
 	function add_to_property_to_join( $join, $query ) {
 
 		if($query->query_vars['post_type'] == STAYPRESS_PROPERTY_POST_TYPE) {
-			$sql = $this->db->prepare( " LEFT JOIN {$this->property} ON {$this->db->posts}.ID = {$this->property}.post_id" );
+			$sql = " LEFT JOIN {$this->property} ON {$this->db->posts}.ID = {$this->property}.post_id";
 
 			$join .= $sql;
 		}
@@ -405,7 +405,7 @@ class property_model {
 				$ids[$key] = $property->ID;
 			}
 
-			$sql = $this->db->prepare( "SELECT post_id, reference FROM {$this->property} WHERE post_id IN (" . implode(",", $ids) . ")" );
+			$sql = "SELECT post_id, reference FROM {$this->property} WHERE post_id IN (" . implode(",", $ids) . ")";
 
 			$results = $this->db->get_results($sql);
 			if(!empty($results)) {
@@ -932,9 +932,9 @@ class property_model {
 
 	function get_properties_for_metas( $metas, $excludestatus = array('trash', 'draft', 'private') ) {
 
-		$filtersql .= $this->db->prepare("SELECT pm.property_id FROM {$this->property_meta} AS pm INNER JOIN {$this->metadesc} AS m ON pm.meta_id = m.id INNER JOIN {$this->db->posts} AS p ON pm.property_id = p.ID  WHERE ");
+		$filtersql .= "SELECT pm.property_id FROM {$this->property_meta} AS pm INNER JOIN {$this->metadesc} AS m ON pm.meta_id = m.id INNER JOIN {$this->db->posts} AS p ON pm.property_id = p.ID  WHERE ";
 		$filtersql .= $this->db->prepare("(m.blog_id IN (0, %d)) AND ", $this->blog_id);
-		$filtersql .= $this->db->prepare("p.post_status NOT IN ('" . implode("','", $excludestatus) . "') AND ");
+		$filtersql .= "p.post_status NOT IN ('" . implode("','", $excludestatus) . "') AND ";
 		$inmeta = array();
 		foreach($metas as $key => $value) {
 			$inmeta[] = $this->db->prepare("(REPLACE(LOWER(m.metaname), ' ', '-') = %s AND pm.meta_value = %s)", $key, $value);
@@ -1072,8 +1072,8 @@ class property_model {
 
 		if(!$property_id) $property_id = $this->property_id;
 
-		$sql  = $this->db->prepare( "SELECT pr.property_id, pr.price_row, pr.price_day, pr.price_month, prl.price_amount, prl.price_period, prl.price_period_type, prl.price_currency " );
-		$sql .= $this->db->prepare( " FROM {$this->property_price} AS pr INNER JOIN {$this->property_price_line} AS prl ON pr.property_id = prl.property_id AND pr.price_row = prl.price_row" );
+		$sql  = "SELECT pr.property_id, pr.price_row, pr.price_day, pr.price_month, prl.price_amount, prl.price_period, prl.price_period_type, prl.price_currency ";
+		$sql .= " FROM {$this->property_price} AS pr INNER JOIN {$this->property_price_line} AS prl ON pr.property_id = prl.property_id AND pr.price_row = prl.price_row";
 		$sql .= $this->db->prepare( " WHERE pr.property_id = %d AND pr.blog_id = %d ORDER BY pr.price_month ASC, pr.price_day ASC", $property_id , $this->blog_id);
 
 		$results = $this->db->get_results($sql);
@@ -1086,8 +1086,8 @@ class property_model {
 
 		if(!$property_id) $property_id = $this->property_id;
 
-		$sql  = $this->db->prepare( "SELECT pr.property_id, pr.price_row, pr.price_day, pr.price_month, prl.price_amount, prl.price_period, prl.price_period_type, prl.price_currency " );
-		$sql .= $this->db->prepare( " FROM {$this->property_price} AS pr INNER JOIN {$this->property_price_line} AS prl ON pr.property_id = prl.property_id AND pr.price_row = prl.price_row" );
+		$sql  = "SELECT pr.property_id, pr.price_row, pr.price_day, pr.price_month, prl.price_amount, prl.price_period, prl.price_period_type, prl.price_currency ";
+		$sql .= " FROM {$this->property_price} AS pr INNER JOIN {$this->property_price_line} AS prl ON pr.property_id = prl.property_id AND pr.price_row = prl.price_row";
 		$sql .= $this->db->prepare( " WHERE pr.property_id = %d AND pr.blog_id = %d AND prl.price_period = %d AND prl.price_period_type = %s ORDER BY pr.price_month ASC, pr.price_day ASC", $property_id , $this->blog_id, $period, $period_type);
 
 		$results = $this->db->get_results($sql);
@@ -1208,7 +1208,7 @@ class property_model {
 				$row++;
 			}
 			if(!empty($sqlin)) {
-				$sql = $this->db->prepare( "INSERT INTO {$this->property_price} VALUES " . implode(',', $sqlin) );
+				$sql = "INSERT INTO {$this->property_price} VALUES " . implode(',', $sqlin);
 				$this->db->query($sql);
 			}
 
@@ -1221,7 +1221,7 @@ class property_model {
 				$row++;
 			}
 			if(!empty($sqlin)) {
-				$sql = $this->db->prepare( "INSERT INTO {$this->property_price_line} VALUES " . implode(',', $sqlin) );
+				$sql = "INSERT INTO {$this->property_price_line} VALUES " . implode(',', $sqlin);
 				$this->db->query($sql);
 			}
 		}
@@ -1247,7 +1247,7 @@ class property_model {
 				$row++;
 			}
 			if(!empty($sqlin)) {
-				$sql = $this->db->prepare( "INSERT INTO {$this->property_meta} VALUES " . implode(',', $sqlin) );
+				$sql = "INSERT INTO {$this->property_meta} VALUES " . implode(',', $sqlin);
 				$this->db->query($sql);
 			}
 

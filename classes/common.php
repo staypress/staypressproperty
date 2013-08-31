@@ -11,10 +11,10 @@ class SPPCommon {
 
 		if(defined('WPMU_PLUGIN_URL') && defined('WPMU_PLUGIN_DIR') && file_exists(WPMU_PLUGIN_DIR . '/' . basename($base))) {
 			self::$SP_property_url = trailingslashit(WPMU_PLUGIN_URL);
-		} elseif(defined('WP_PLUGIN_URL') && defined('WP_PLUGIN_DIR') && file_exists(WP_PLUGIN_DIR . '/sp_property/' . basename($base))) {
-			self::$SP_property_url = trailingslashit(WP_PLUGIN_URL . '/sp_property');
+		} elseif(defined('WP_PLUGIN_URL') && defined('WP_PLUGIN_DIR') && file_exists(WP_PLUGIN_DIR . '/staypressproperty/' . basename($base))) {
+			self::$SP_property_url = trailingslashit(WP_PLUGIN_URL . '/staypressproperty');
 		} else {
-			self::$SP_property_url = trailingslashit(WP_PLUGIN_URL . '/sp_property');
+			self::$SP_property_url = trailingslashit(WP_PLUGIN_URL . '/staypressproperty');
 		}
 
 	}
@@ -24,10 +24,10 @@ class SPPCommon {
 
 		if(defined('WPMU_PLUGIN_DIR') && file_exists(WPMU_PLUGIN_DIR . '/' . basename($base))) {
 			self::$SP_property_dir = trailingslashit(WPMU_PLUGIN_URL);
-		} elseif(defined('WP_PLUGIN_DIR') && file_exists(WP_PLUGIN_DIR . '/sp_property/' . basename($base))) {
-			self::$SP_property_dir = trailingslashit(WP_PLUGIN_DIR . '/sp_property');
+		} elseif(defined('WP_PLUGIN_DIR') && file_exists(WP_PLUGIN_DIR . '/staypressproperty/' . basename($base))) {
+			self::$SP_property_dir = trailingslashit(WP_PLUGIN_DIR . '/staypressproperty');
 		} else {
-			self::$SP_property_dir = trailingslashit(WP_PLUGIN_DIR . '/sp_property');
+			self::$SP_property_dir = trailingslashit(WP_PLUGIN_DIR . '/staypressproperty');
 		}
 	}
 
@@ -172,7 +172,7 @@ class SPPCommon {
 	}
 
 	// JSON and data based functions
-	function enqueue_data( $namespace, $key, $data ) {
+	public static function enqueue_data( $namespace, $key, $data ) {
 
 		self::$SP_data_queue[$namespace][$key] = self::_build_data($data);
 
@@ -204,7 +204,7 @@ class SPPCommon {
 
 	}
 
-	function print_data() {
+	public static function print_data() {
 
 		if(!empty(self::$SP_data_queue)) {
 			echo "\n" . '<script type="text/javascript">';

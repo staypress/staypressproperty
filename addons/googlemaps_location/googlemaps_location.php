@@ -35,7 +35,7 @@ class sp_googlemaps_location {
 		global $wpdb, $user;
 
 		$installed_build = SPPCommon::get_option('staypress_property_build', false);
-		$this->property =& new property_model($wpdb, $installed_build);
+		$this->property = new property_model($wpdb, $installed_build);
 
 		$tz = get_option('gmt_offset');
 		$this->property->set_timezone($tz);
@@ -240,6 +240,6 @@ class sp_googlemaps_location {
 
 }
 
-$sp_googlemaps_location =& new sp_googlemaps_location();
+$sp_googlemaps_location = new sp_googlemaps_location();
 
 ?>
