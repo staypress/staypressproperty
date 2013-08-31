@@ -490,7 +490,7 @@ class sp_propertyadmin {
 	// for tinymce and google
 	function output_admin_header() {
 
-		if (function_exists('wp_tiny_mce')) wp_tiny_mce();
+		//if (function_exists('wp_tiny_mce')) wp_tiny_mce();
 
 	}
 
@@ -1844,36 +1844,36 @@ class sp_propertyadmin {
 		echo "<input type='hidden' id='action' name='action' value='save' />";
 
 		echo "<input type='hidden' id='imageorder' name='imageorder' value='none' />";
-		echo "<input type='hidden' id='mainimage' name='mainimage' value='" . $property->mainimageid . "' />";
-		echo "<input type='hidden' id='listimage' name='listimage' value='" . $property->listimageid . "' />";
+		echo "<input type='hidden' id='mainimage' name='mainimage' value='" . (isset($property->mainimageid) ? $property->mainimageid : '') . "' />";
+		echo "<input type='hidden' id='listimage' name='listimage' value='" . (isset($property->listimageid) ? $property->listimageid : '') . "' />";
 
 		echo "<input type='hidden' id='id' name='id' value='" . $property->ID . "' />";
-		echo "<input type='hidden' id='status' name='status' value='" . $property->status . "' />";
-		echo "<input type='hidden' id='externalid' name='ext_id' value='" . $property->ext_id . "' />";
+		echo "<input type='hidden' id='status' name='status' value='" . (isset($property->status) ? $property->status : '') . "' />";
+		echo "<input type='hidden' id='externalid' name='ext_id' value='" . (isset($property->ext_id) ? $property->ext_id : '') . "' />";
 
 		wp_nonce_field('update-property-' . $property->ID);
 
 		// Visible fields
 		if(isset($propertyfields['reference']) && $propertyfields['reference'] == 'no') {} else {
 			echo "<label for='propertyreference' class='main'>" . __('Reference', 'property') . "</label>";
-			echo "<input type='text' name='propertyreference' id='propertyreference' value='" . esc_attr(stripslashes($property->reference)) . "' class='main narrow" . $this->error_class('propertyreference', $error) . "' />";
+			echo "<input type='text' name='propertyreference' id='propertyreference' value='" . esc_attr(stripslashes( (isset($property->reference) ? $property->reference : '' ))) . "' class='main narrow" . $this->error_class('propertyreference', $error) . "' />";
 		}
 		echo "<label for='propertytitle' class='main'>" . __('Title', 'property') . "</label>";
-		echo "<input type='text' name='propertytitle' id='propertytitle' value='" . esc_attr(stripslashes($property->post_title)) . "' class='main wide" . $this->error_class('propertytitle', $error) . "' />";
+		echo "<input type='text' name='propertytitle' id='propertytitle' value='" . esc_attr(stripslashes( (isset($property->post_title) ? $property->post_title : '' ))) . "' class='main wide" . $this->error_class('propertytitle', $error) . "' />";
 
 		// Permalink field
 		if(isset($propertyfields['permalink']) && $propertyfields['permalink'] == 'no') {} else {
 		}
 
 		echo "<label for='propertyextract' class='main'>" . __('Short Description', 'property') . "</label>";
-		echo "<textarea name='propertyextract' id='propertyextract' class='main wide short'>" . esc_attr(stripslashes($property->post_excerpt)) . "</textarea>";
+		echo "<textarea name='propertyextract' id='propertyextract' class='main wide short'>" . esc_attr(stripslashes( (isset($property->post_excerpt) ? $property->post_excerpt : '' ))) . "</textarea>";
 
 		// Strip out the standard media buttons because we don't want them
 		remove_all_actions( 'media_buttons' );
 		// Add the description label
 		add_action( 'media_buttons', array(&$this,'show_description_label') );
 
-		the_editor(stripslashes($property->post_content), 'propertydescription', 'propertyextract', true);
+		wp_editor(stripslashes( (isset($property->post_content) ? $property->post_content : '' )), 'propertydescription', 'propertyextract', true);
 
 		echo '<table id="post-status-info" cellspacing="0"><tbody><tr>';
 		echo '<td id="wp-word-count">&nbsp;</td>';
@@ -2285,13 +2285,13 @@ class sp_propertyadmin {
 		}
 
 		// Hidden fields
-		echo "<input type='hidden' name='propertycontactid' id='propertycontactid' value='" . esc_attr(stripslashes($contact->ID)) . "' class='main narrow' />";
+		echo "<input type='hidden' name='propertycontactid' id='propertycontactid' value='" . esc_attr(stripslashes( (isset($contact->ID) ? $contact->ID : '' ))) . "' class='main narrow' />";
 
 		// Visible fields
 		echo "<p>" . __('Enter the details of any additional person you want to be contacted with enquiries.','property') . "</p>";
 
 		echo "<label for='propertycontactname' class='main'>" . __('Name', 'property') . "</label>";
-		echo "<input type='text' name='propertycontactname' id='propertycontactname' value='" . esc_attr(stripslashes($contact->post_title)) . "' class='main narrow' />";
+		echo "<input type='text' name='propertycontactname' id='propertycontactname' value='" . esc_attr(stripslashes( (isset($contact->post_title) ? $contact->post_title : '' ))) . "' class='main narrow' />";
 
 		if(!empty($contact->ID)) {
 			$contactmetadata = get_post_custom($contact->ID);
@@ -2318,7 +2318,7 @@ class sp_propertyadmin {
 		echo "<input type='text' name='propertycontacttel' id='propertycontacttel' value='" . esc_attr(stripslashes($contact->contact_tel)) . "' class='main narrow' />";
 
 		echo "<label for='propertycontactnotes' class='main'>" . __('Notes (public)', 'property') . "</label>";
-		echo "<textarea name='propertycontactnotes' id='propertycontactnotes' class='main wide short'>" . esc_html(stripslashes($contact->post_content)) . "</textarea>";
+		echo "<textarea name='propertycontactnotes' id='propertycontactnotes' class='main wide short'>" . esc_html(stripslashes( (isset($contact->post_content) ? $contact->post_content : '' ))) . "</textarea>";
 
 
 	}
@@ -2781,7 +2781,7 @@ class sp_propertyadmin {
 		echo "<div class='innersidebarbox'>";
 		echo "<div class='statuslabel'>" . __('Status','property');
 
-		echo "<input type='hidden' name='oldstatus' id='oldstatus' value='" . esc_attr($property->post_status) . "' />\n";
+		echo "<input type='hidden' name='oldstatus' id='oldstatus' value='" . esc_attr( (isset($property->post_status) ? $property->post_status : '' )) . "' />\n";
 
 		$statusoptions = $this->property->get_statuslist();
 		echo "<select name='status' id='savestatus'>";
@@ -2795,7 +2795,7 @@ class sp_propertyadmin {
 			}
 
 			echo "<option value='" . $key . "'";
-			if($property->post_status == $key) {
+			if(isset($property->post_status) && $property->post_status == $key) {
 				echo " selected='selected'";
 			}
 			echo ">" . $value . "</option>";
@@ -2806,11 +2806,11 @@ class sp_propertyadmin {
 		echo "<div class='statusbuttons'>";
 
 		//current_user_can( 'publish_properties' )
-		if( in_array($property->post_status, array('private', 'publish')) ) {
+		if( isset($property->post_status) && in_array($property->post_status, array('private', 'publish')) ) {
 
 			echo "<input type='submit' name='save' value='" . __('Save','property') . "' class='button-primary' />";
 
-		} elseif( in_array($property->post_status, array('pending', 'draft', 'trash', '')) ) {
+		} elseif( isset($property->post_status) && in_array($property->post_status, array('pending', 'draft', 'trash', '')) ) {
 
 			if(current_user_can( 'publish_properties' )) {
 				echo "<input type='submit' name='publish' value='" . __('Publish','property') . "' class='button-primary' />";
