@@ -1403,7 +1403,7 @@ class sp_propertyadmin {
 
 		// Handle meta changes
 		$meta = array();
-		$postmeta = $_POST['meta'];
+		$postmeta = (isset($_POST['meta']) ? $_POST['meta'] : '');
 
 		if(!empty($postmeta)) {
 			foreach($postmeta as $key => $value) {
@@ -1612,7 +1612,7 @@ class sp_propertyadmin {
 			$property['mainimageid'] = $_POST['mainimage'];
 			$property['listimageid'] = $_POST['listimage'];
 
-			$property['post_id'] = $_POST['post_id'];
+			$property['post_id'] = (isset($_POST['post_id']) ? $_POST['post_id'] : '');
 
 			// Add in the tags - testing
 			if ( !empty($_POST['tags_input']) ) {
@@ -2806,11 +2806,14 @@ class sp_propertyadmin {
 		echo "<div class='statusbuttons'>";
 
 		//current_user_can( 'publish_properties' )
-		if( isset($property->post_status) && in_array($property->post_status, array('private', 'publish')) ) {
+		if(!isset($property->post_status)) {
+			$property->post_status = 'draft';
+		}
+		if( in_array($property->post_status, array('private', 'publish')) ) {
 
 			echo "<input type='submit' name='save' value='" . __('Save','property') . "' class='button-primary' />";
 
-		} elseif( isset($property->post_status) && in_array($property->post_status, array('pending', 'draft', 'trash', '')) ) {
+		} elseif( in_array($property->post_status, array('pending', 'draft', 'trash', '')) ) {
 
 			if(current_user_can( 'publish_properties' )) {
 				echo "<input type='submit' name='publish' value='" . __('Publish','property') . "' class='button-primary' />";
@@ -2850,7 +2853,7 @@ class sp_propertyadmin {
 				echo "<option value='0'>" . __('Select a parent', 'property') . "</option>";
 		foreach($properties as $parent) {
 			echo "<option value='" . $parent->ID . "' ";
-			if($parent->ID == $property->post_parent) {
+			if(isset($property->post_parent) && $parent->ID == $property->post_parent) {
 				echo "selected='selected'";
 			}
 			echo ">";
