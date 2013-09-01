@@ -65,11 +65,11 @@ class sp_propertypublic {
 		if($installed_build === false) {
 			$installed_build = $this->build;
 			// Create the property class and force table creation
-			$this->property =& new property_model($wpdb, 0);
+			$this->property = new property_model($wpdb, 0);
 			SPPCommon::update_option('staypress_property_build', $installed_build);
 		} else {
 			// Create the property class and send through installed build version
-			$this->property =& new property_model($wpdb, $installed_build);
+			$this->property = new property_model($wpdb, $installed_build);
 		}
 
 		$tz = get_option('gmt_offset');
@@ -322,6 +322,8 @@ class sp_propertypublic {
 		$taxonomies = SPPCommon::get_option('property_taxonomies', false);
 
 		$taxonomies = apply_filters('staypress_property_taxonomies', $taxonomies);
+
+		$page_prefix = SPPCommon::get_option('property_rewrite_prefix', '');
 
 		if($taxonomies) {
 			foreach($taxonomies as $key => $tax) {
@@ -805,9 +807,9 @@ class sp_propertypublic {
 			$property_id = STAYPRESS_ON_PROPERTY_PAGE;
 		}
 
-		$property =& get_post( $property_id );
+		$property = get_post( $property_id );
 
-		$newtitle = $this->propertyoptions['propertydetailstitle'];
+		$newtitle = (isset($this->propertyoptions['propertydetailstitle']) ? $this->propertyoptions['propertydetailstitle'] : '');
 
 		if(empty($newtitle)) return $title;
 
@@ -840,7 +842,7 @@ class sp_propertypublic {
 
 	function build_title_list( $title, $sep, $seplocation ) {
 
-		$newtitle = $this->propertyoptions['propertylisttitle'];
+		$newtitle = (isset($this->propertyoptions['propertylisttitle']) ? $this->propertyoptions['propertylisttitle'] : '');
 
 		if(empty($newtitle)) return $title;
 
@@ -871,7 +873,7 @@ class sp_propertypublic {
 
 		global $sp_tags;
 
-		$newtitle = $this->propertyoptions['propertytagtitle'];
+		$newtitle = (isset($this->propertyoptions['propertytagtitle']) ? $this->propertyoptions['propertytagtitle'] : '');
 
 		if(empty($newtitle)) return $title;
 
@@ -900,7 +902,7 @@ class sp_propertypublic {
 
 	function build_title_destination( $title, $sep, $seplocation ) {
 
-		$newtitle = $this->propertyoptions['propertydesttitle'];
+		$newtitle = (isset($this->propertyoptions['propertydesttitle']) ? $this->propertyoptions['propertydesttitle'] : '');
 
 		if(empty($newtitle)) return $title;
 
@@ -948,7 +950,7 @@ class sp_propertypublic {
 
 		global $wp_query;
 
-		$newtitle = $this->propertyoptions['propertysearchtitle'];
+		$newtitle = (isset($this->propertyoptions['propertysearchtitle']) ? $this->propertyoptions['propertysearchtitle'] : '');
 
 		if(empty($newtitle)) return $title;
 
@@ -980,7 +982,7 @@ class sp_propertypublic {
 
 		$property =& get_post( $property_id );
 
-		$newtitle = $this->propertyoptions['propertyneartitle'];
+		$newtitle = (isset($this->propertyoptions['propertyneartitle']) ? $this->propertyoptions['propertyneartitle'] : '');
 
 		if(empty($newtitle)) return $title;
 
@@ -3183,7 +3185,7 @@ class sp_propertypublic {
 		if(!empty($infopostid)) {
 			// get the post here and output the content at the top of the page
 			// this will generally be a description of the area.
-			$infopost =& new WP_Query('post_type=destination&post_status=publish&p=' . $infopostid);
+			$infopost = new WP_Query('post_type=destination&post_status=publish&p=' . $infopostid);
 
 			if($infopost->have_posts()) {
 				$infopost->the_post();
@@ -3298,7 +3300,7 @@ class sp_propertypublic {
 		if(!empty($infopostid)) {
 			// get the post here and output the content at the top of the page
 			// this will generally be a description of the area.
-			$infopost =& new WP_Query('post_type=destination&post_status=publish&p=' . $infopostid);
+			$infopost = new WP_Query('post_type=destination&post_status=publish&p=' . $infopostid);
 
 			if($infopost->have_posts()) {
 				$infopost->the_post();
@@ -3410,7 +3412,7 @@ class sp_propertypublic {
 		if(!empty($infopostid)) {
 			// get the post here and output the content at the top of the page
 			// this will generally be a description of the area.
-			$infopost =& new WP_Query('post_type=destination&post_status=publish&p=' . $infopostid);
+			$infopost = new WP_Query('post_type=destination&post_status=publish&p=' . $infopostid);
 
 			if($infopost->have_posts()) {
 				$infopost->the_post();
@@ -3493,7 +3495,7 @@ class sp_propertypublic {
 		if(!empty($infopostid)) {
 			// get the post here and output the content at the top of the page
 			// this will generally be a description of the area.
-			$infopost =& new WP_Query('post_type=destination&post_status=publish&p=' . $infopostid);
+			$infopost = new WP_Query('post_type=destination&post_status=publish&p=' . $infopostid);
 
 			if($infopost->have_posts()) {
 				$infopost->the_post();
