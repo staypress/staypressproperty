@@ -4827,7 +4827,7 @@ class sp_propertyadmin {
 			$options = array();
 			$options['permalinkhasid'] = strtolower($_POST['permalinkhasid']);
 			$options['firstelement'] = strtolower($_POST['firstelement']);
-			$options['propertytitlelayout'] = strtolower($_POST['propertytitlelayout']);
+			$options['propertytitlelayout'] = strtolower((isset($_POST['propertytitlelayout']) ? $_POST['propertytitlelayout'] : '' ));
 
 			$options['propertyurl'] = strtolower($_POST['propertyurl']);
 			$options['propertylisturl'] = strtolower($_POST['propertylisturl']);
